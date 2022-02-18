@@ -3,13 +3,13 @@
     <div>
         <div style="display: flex">
             <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" @click="toggleNav()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn" @click="toggleNav()">&#10005;</a>
                 <router-link to="/Weather.vue" @click="toggleNav()">Weather</router-link>
-                <router-link to="/Home.vue" @click="toggleNav()">Music Streaming</router-link>
-                <router-link to="About" @click="toggleNav()">Recipe Book</router-link>
+                <router-link to="/Rick.vue" @click="toggleNav()">Music Streaming</router-link>
+                <router-link to="Recipe.vue" @click="toggleNav()">Recipe Book</router-link>
             </div>
             <div id="main">
-                <button class="openbtn" @click="toggleNav()">&#9776;</button>
+                <button class="openbtn" @click="toggleNav()">&#9778;</button>
             </div>
         </div>
         <div class="grid-container">

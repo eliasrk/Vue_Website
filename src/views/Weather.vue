@@ -9,14 +9,14 @@
                     <a href="javascript:void(0)" class="closebtn" @click="toggleNav()">&times;</a>
                     <!-- router link changes the page -->
                     <router-link to="/Weather.vue" @click="toggleNav()">Weather</router-link>
-                    <router-link to="/Home.vue" @click="toggleNav()">Music Streaming</router-link>
-                    <router-link to="About" @click="toggleNav()">Recipe Book</router-link>
+                    <router-link to="/Rick.vue" @click="toggleNav()">Music Streaming</router-link>
+                    <router-link to="Recipe.vue" @click="toggleNav()">Recipe Book</router-link>
                 </div>
                 <div id="main">
-                    <button class="openbtn" @click="toggleNav()">&#9776;</button>
+                    <button class="openbtn" @click="toggleNav()">&#9778;</button>
                 </div>
                 <div class="search-box" id="inline">
-                    <input type="text" class="search-bar" placeholder="Search..." v-model="query" @keypress="fetchWeather" />
+                    <input type="text" class="search-bar" placeholder="Search For City Weather Data..." v-model="query" @keypress="fetchWeather" />
                 </div>
             </div>
             <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">

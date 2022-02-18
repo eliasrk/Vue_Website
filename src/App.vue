@@ -115,7 +115,7 @@ h1 {
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+    color: #c0c0c0;
 }
 
 .sidebar .closebtn {
@@ -145,13 +145,13 @@ h1 {
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 0px 16px 0px 16px;
+    border-radius: 25px;
     transition: 0.4s;
 }
 
 .openbtn:hover {
     background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 16px 0px 16px 0px;
+    border-radius: 10px;
     transform: rotate(-90deg);
 }
 #main {
@@ -212,20 +212,20 @@ main {
 
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 0px 16px 0px 16px;
+    border-radius: 25px;
     transition: 0.4s;
 }
 
 .search-box .search-bar:focus {
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
     background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 16px 0px 16px 0px;
+    border-radius: 10px;
 }
 
 .search-box .search-bar:hover {
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
     background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 16px 0px 16px 0px;
+    border-radius: 10px;
 }
 
 .location-box .location {

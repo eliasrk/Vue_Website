@@ -12,6 +12,13 @@
                 <button class="openbtn" @click="toggleNav()">&#9778;</button>
             </div>
         </div>
+
+        <div style="text-align: center;"><h1>My Collection of Recipes</h1></div>
+        <div id="description">
+            <h2>About the Recipes</h2>
+            Cause Every website has a description about their life story and how great these recipes are
+            Anim adipisicing dolore tempor tempor ullamco id officia commodo anim reprehenderit et Lorem.
+            </div>
         <div class="grid-container">
             <div class="grid-item">
                 <div><img src="@/assets/chicken.png" alt="Chicken"></div><a href="https://www.gordonramsay.com/gr/recipes/picklebrinedfriedchicken/" target="_blank">

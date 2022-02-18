@@ -175,6 +175,7 @@ body {
 #app {
 
     background-image: url("./assets/color.png");
+    background-repeat: repeat;
     background-size:auto;
     background-position: top;
     transition: 0.4s;
@@ -336,6 +337,10 @@ iframe{
         grid-template-columns: 100%;
 
     }
+    #app{
+        background-repeat: repeat-y !important;
+    }
+
     iframe{
         width: 100vm;
         height: 50vmmax;
@@ -369,5 +374,24 @@ iframe{
     margin-top:1em;
     height:100%;
     ;
+}
+#description{
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    font-family: montserrat;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+#Title{
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    font-family: montserrat;
+    color:black;
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 3em;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
 }
 </style>

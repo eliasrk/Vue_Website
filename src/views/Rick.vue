@@ -10,8 +10,9 @@
             </div>
             <div id="main">
                 <button class="openbtn" @click="toggleNav()">&#9778;</button>
-            </div> 
+            </div>
         </div>
+        <div style="text-align: center;"><h1 id="Title"> This Video is Essential to be viewed </h1></div>
     </div><div id="getRickRolled">
     <iframe  src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42"
             title="YouTube video player" frameborder="0"

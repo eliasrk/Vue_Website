@@ -1,37 +1,10 @@
+
 <template>
-<div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
-    <main>
-        <div style="display: block">
-            <div style="display: flex">
-                <div id="mySidebar" class="sidebar">
-                    <a href="javascript:void(0)" class="closebtn" @click="toggleNav()">&times;</a>
-                    <a href="#">Homepage</a>
-                    <a href="#">Recipe</a>
-                    <a href="#">Recipe</a>
-                    <a href="#">Contact</a>
-                </div>
-
-                <div id="main">
-                    <button class="openbtn" @click="toggleNav()">&#9776;</button>
-                </div>
-                <div class="search-box" id="inline">
-                    <input type="text" class="search-bar" placeholder="Search..." v-model="query" @keypress="fetchWeather" />
-                </div>
-            </div>
-            <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
-                <div class="location-box">
-                    <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
-                    <div class="date">{{ setDate() }}</div>
-                </div>
-
-                <div class="weather-box">
-                    <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
-                    <div class="weather">{{ weather.weather[0].main }}</div>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
+<v-app>
+        <v-content>
+            <router-view></router-view>
+        </v-content>
+    </v-app>
 </template>
 
 <script>
@@ -39,6 +12,7 @@ export default {
     name: "app",
     data() {
         return {
+            /* ------------------------   Data for the weather fetch to use  -----------------------*/
             api_key: "faeaea62adc77098f2411345b4eecd7c",
             url_base: "https://api.openweathermap.org/data/2.5/",
             query: "",
@@ -46,7 +20,7 @@ export default {
         };
     },
     methods: {
-        /* --------------------   toggle Sidebar   -----------------------*/
+        /* --------------------   fetch weather Data from Open WeatherAPI   -----------------------*/
         fetchWeather(e) {
             if (e.key == "Enter") {
                 fetch(
@@ -61,10 +35,12 @@ export default {
         setResults(results) {
             this.weather = results;
         },
+        /* ------------------------   switches the sidebar ON/OFF  -----------------------*/
         toggleNav() {
             if (!this.isActive) {
                 document.getElementById("mySidebar").style.width = "250px";
                 document.getElementById("main").style.marginLeft = "250px";
+                document.getElementById("openbtn").style.transform = "rotate(20deg)";
                 this.isActive = true;
             } else {
                 document.getElementById("mySidebar").style.width = "0";
@@ -72,7 +48,7 @@ export default {
                 this.isActive = false;
             }
         },
-
+        /* ------------------------   Outputs todays Date  -----------------------*/
         setDate() {
             let d = new Date();
             let months = [
@@ -106,9 +82,10 @@ export default {
         },
     },
 };
+
 </script>
 
-<style>
+<style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@100&display=swap');
 h1 {
     color: #f1f1f1;
 }
@@ -122,7 +99,7 @@ h1 {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 1);
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -175,8 +152,8 @@ h1 {
 .openbtn:hover {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 16px 0px 16px 0px;
+    transform: rotate(-90deg);
 }
-
 #main {
     transition: margin-left 0.5s;
     padding-right: 1em;
@@ -196,9 +173,10 @@ body {
 }
 
 #app {
-    background-image: url("./assets/Backgroundblue.jpg");
-    background-size: cover;
-    background-position: bottom;
+
+    background-image: url("./assets/color.png");
+    background-size:auto;
+    background-position: top;
     transition: 0.4s;
 }
 
@@ -294,5 +272,102 @@ main {
 
 #app.warm {
     background-image: url("./assets/warm.jpg");
+}
+
+.grid-container {
+  display: inline-grid;
+}
+
+
+/* ------------------------   Css for About Page  -----------------------*/
+
+
+#app {
+    height: 100em;
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4s;
+}
+
+.grid-container {
+    display: grid;
+
+    grid-template-columns: auto auto auto;
+    margin-top: 1em;
+    column-gap: 1em;
+    row-gap: 1em;
+
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    font-family: "roboto", sans-serif;
+}
+
+.grid-item:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(0.9, 0.9);
+    transition: 0.4s;
+    transition-timing-function: ease-in-out
+}
+
+img {
+    width: 50%;
+}
+
+iframe{
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 16px;
+        width:100%;
+        height:80vh;
+}
+/* ------------------------   Change CSS for different Screen Sizes  -----------------------*/
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 100%;
+
+    }
+    iframe{
+        width: 100vm;
+        height: 50vmmax;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 50% 50%;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    .grid-container {
+        grid-template-columns: 33% 33% 33%;
+        padding-right: 1em;
+
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .grid-container {
+        grid-template-columns: 25% 25% 25% 25%;
+
+        margin-right: 2em;
+
+    }
+}
+#getRickRolled{
+    margin-top:1em;
+    height:100%;
+    ;
 }
 </style>

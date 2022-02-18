@@ -10,6 +10,7 @@
   "dependencies": {
     "@vue/cli": "^4.5.15",
     "all": "^0.0.0",
+    "cache-loader": "^4.1.0",
     "core-js": "^3.6.5",
     "defaults": "^1.0.3",
     "json-parse-even-better-errors": "^2.3.1",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",

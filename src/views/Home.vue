@@ -10,7 +10,7 @@
             </div>
             <div id="main">
                 <button class="openbtn" @click="toggleNav()">&#9776;</button>
-            </div>
+            </div> 
         </div>
     </div><div id="getRickRolled">
     <iframe  src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42"

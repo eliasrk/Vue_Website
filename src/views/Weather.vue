@@ -11,7 +11,9 @@
                     <router-link to="/Weather.vue" @click="toggleNav()">Weather</router-link>
                     <router-link to="/Rick.vue" @click="toggleNav()">Music Streaming</router-link>
                     <router-link to="Recipe.vue" @click="toggleNav()">Recipe Book</router-link>
+                   
                 </div>
+                 
                 <div id="main">
                     <button class="openbtn" @click="toggleNav()">&#9778;</button>
                 </div>
@@ -30,6 +32,12 @@
                 </div>
             </div>
         </div>
+        <div id="impress">
+                    <h3 >Impressum</h3>
+                    <h4>Fotos: <a href="Flicker.com" id="sidebartext">Flicker</a></h4>
+                    <h4>Video: <a href="youtube.com">Youtube</a></h4>
+                    <h4>Email: <a href="mailto:eliaskupeczki@gmail.com">eliaskupeczki@gmail.com</a></h4>
+                </div>
     </main>
 </div>
 </template>
